@@ -6,8 +6,8 @@ package com.project.codeclan.todolist;
 
 public class Task {
 
-    String briefTask;
-    String detailedTask;
+    private String briefTask;
+    private String detailedTask;
 
     public Task(String briefTask, String detailedTask) {
         this.briefTask = briefTask;
