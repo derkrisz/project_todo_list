@@ -30,6 +30,8 @@ public class ToDoListAdapter extends ArrayAdapter<Task> {
         TextView briefTask = (TextView) listItemView.findViewById(R.id.brieftask);
         briefTask.setText(currentTask.getBriefTask().toString());
 
+        listItemView.setTag(currentTask);
+
         return listItemView;
     }
 }

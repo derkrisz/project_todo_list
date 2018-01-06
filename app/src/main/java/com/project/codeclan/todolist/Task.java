@@ -1,10 +1,12 @@
 package com.project.codeclan.todolist;
 
+import java.io.Serializable;
+
 /**
  * Created by derkrisz on 2018. 01. 06..
  */
 
-public class Task {
+public class Task implements Serializable {
 
     private String briefTask;
     private String detailedTask;
