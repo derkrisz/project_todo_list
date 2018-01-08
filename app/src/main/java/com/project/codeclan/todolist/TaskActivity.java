@@ -1,9 +1,17 @@
 package com.project.codeclan.todolist;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 
 public class TaskActivity extends AppCompatActivity {
 
@@ -17,7 +25,7 @@ public class TaskActivity extends AppCompatActivity {
         detailedTask = findViewById(R.id.detailedtask);
 
         Intent intent = getIntent();
-        Task task = (Task)intent.getSerializableExtra("task");
-        detailedTask.setText(task.getDetailedTask().toString());
+        Task addedTask = (Task)intent.getSerializableExtra("task");
+        detailedTask.setText(addedTask.getDetailedTask().toString());
     }
 }

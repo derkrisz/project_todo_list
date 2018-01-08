@@ -20,4 +20,8 @@ public class ToDoList {
     public ArrayList<Task> getToDoList() {
         return toDoList;
     }
+
+    public void addToList(Task task) {
+        toDoList.add(task);
+    }
 }
