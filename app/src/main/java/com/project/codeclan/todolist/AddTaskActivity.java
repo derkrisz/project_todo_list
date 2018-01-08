@@ -1,12 +1,15 @@
 package com.project.codeclan.todolist;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -45,6 +48,17 @@ public class AddTaskActivity extends AppCompatActivity {
         editor.putString("AllTasks", gson.toJson(allTaskObjects));
         editor.apply();
 
+        Toast.makeText(this, "New task created!", Toast.LENGTH_LONG).show();
+
+        final Intent takeBack  = new Intent(this, ToDoListActivity.class);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(takeBack);
+            }
+        }, 2000);
     }
 
 }
