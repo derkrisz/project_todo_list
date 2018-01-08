@@ -4,6 +4,6 @@
     <string name="brief_hint">Brief description of task</string>
     <string name="task_button">New task</string>
     <string name="add_task_title">Create a task</string>
-    <string name="add_task_button">Create new task</string>
-    <string name="preference_file_key">TASK</string>
+    <string name="add_task_button">Create task</string>
+    <string name="preference_file_key">TASKS</string>
 </resources>
