@@ -27,9 +27,6 @@ public class ToDoListActivity extends AppCompatActivity {
 
         newButton = findViewById(R.id.new_button);
 
-//        ToDoList toDoList = new ToDoList();
-//        ArrayList<Task> list = toDoList.getToDoList();
-
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         String allTasks = sharedPref.getString("AllTasks", new ArrayList<Task>().toString());
 

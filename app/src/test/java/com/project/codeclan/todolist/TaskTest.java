@@ -28,4 +28,15 @@ public class TaskTest {
     public void getDetailedTask() {
         assertEquals("Take out the recycling bins", task1.getDetailedTask());
     }
+
+    @Test
+    public void taskNotCompleted() {
+        assertEquals(false, task1.isTaskCompleted());
+    }
+
+    @Test
+    public void taskIsCompleted() {
+        task1.setTaskCompleted();
+        assertEquals(true, task1.isTaskCompleted());
+    }
 }

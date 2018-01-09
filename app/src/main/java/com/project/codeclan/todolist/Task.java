@@ -10,10 +10,12 @@ public class Task implements Serializable {
 
     private String briefTask;
     private String detailedTask;
+    private boolean taskCompleted;
 
     public Task(String briefTask, String detailedTask) {
         this.briefTask = briefTask;
         this.detailedTask = detailedTask;
+        this.taskCompleted = false;
     }
 
     public String getBriefTask() {
@@ -22,5 +24,13 @@ public class Task implements Serializable {
 
     public String getDetailedTask() {
         return detailedTask;
+    }
+
+    public boolean isTaskCompleted() {
+        return taskCompleted;
+    }
+
+    public void setTaskCompleted() {
+        this.taskCompleted = true;
     }
 }
