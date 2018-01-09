@@ -8,14 +8,20 @@ import java.io.Serializable;
 
 public class Task implements Serializable {
 
+    static int counter = 0;
+
     private String briefTask;
     private String detailedTask;
     private boolean taskCompleted;
+    private int id;
 
     public Task(String briefTask, String detailedTask) {
         this.briefTask = briefTask;
         this.detailedTask = detailedTask;
         this.taskCompleted = false;
+        this.counter++;
+        this.id = this.counter;
+
     }
 
     public String getBriefTask() {
@@ -32,5 +38,9 @@ public class Task implements Serializable {
 
     public void setTaskCompleted() {
         this.taskCompleted = true;
+    }
+
+    public int getId() {
+        return id;
     }
 }
