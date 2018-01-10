@@ -35,16 +35,18 @@ public class AddTaskActivity extends AppCompatActivity {
     public void onCreateButtonClick(View button) {
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         String allTasks = sharedPref.getString("AllTasks", new ArrayList<Task>().toString());
+        int counter = sharedPref.getInt("counter", 1);
 
         Gson gson = new Gson();
         TypeToken<ArrayList<Task>> taskArrayList = new TypeToken<ArrayList<Task>>(){};
         ArrayList<Task> allTaskObjects = gson.fromJson(allTasks, taskArrayList.getType());
 
-        Task task = new Task(briefTask.getText().toString(), detailedTask.getText().toString());
+        Task task = new Task(briefTask.getText().toString(), detailedTask.getText().toString(), counter);
         allTaskObjects.add(task);
 
         SharedPreferences.Editor editor = sharedPref.edit();
 
+        editor.putInt("counter", counter + 1);
         editor.putString("AllTasks", gson.toJson(allTaskObjects));
         editor.apply();
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -19,6 +20,7 @@ public class TaskActivity extends AppCompatActivity {
 
     TextView detailedTask;
     Task addedTask;
+    CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,32 +28,34 @@ public class TaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task);
 
         detailedTask = findViewById(R.id.detailedtask);
-
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.task_completion_checkbox);
-        if (checkBox.isChecked()) {
-            checkBox.setChecked(false);
-        }
-
+        checkBox = findViewById(R.id.task_completion_checkbox);
 
         Intent intent = getIntent();
         addedTask = (Task)intent.getSerializableExtra("task");
         detailedTask.setText(addedTask.getDetailedTask().toString());
+        checkBox.setChecked(addedTask.isTaskCompleted());
     }
 
     public void onCheckBoxClick(View view) {
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        boolean getCompleted = sharedPref.getBoolean("taskCompleted", false);
+        String tasks = sharedPref.getString("AllTasks", null);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        boolean checked = ((CheckBox) view).isChecked();
+        Gson gson = new Gson();
+        TypeToken<ArrayList<Task>> taskArrayList = new TypeToken<ArrayList<Task>>(){};
+        ArrayList<Task> allTasks = gson.fromJson(tasks, taskArrayList.getType());
 
-        switch(view.getId()) {
-            case R.id.task_completion_checkbox:
-                if (checked)
-                    editor.putBoolean("getCompleted", true);
-                else
-                    Log.d("checkbox uncheked", "unchecked");
 
-        } editor.commit();
+        for (Task task : allTasks) {
+            if (task.getId() == addedTask.getId()) {
+                if (checkBox.isChecked()) {
+                    task.setTaskCompleted();
+                } else {
+                    task.setTaskNotCompleted();
+                }
+            }
+        }
+        editor.putString("AllTasks", gson.toJson(allTasks));
+        editor.apply();
     }
 }

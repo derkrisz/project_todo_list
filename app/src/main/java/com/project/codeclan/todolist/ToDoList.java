@@ -12,8 +12,8 @@ public class ToDoList {
 
     public ToDoList() {
         this.toDoList = new ArrayList<Task>();
-        toDoList.add(new Task("Take out bin", "Take out recycling bins"));
-        toDoList.add(new Task("Weekend cleaning", "Clean out bathroom and kitchen"));
+        //toDoList.add(new Task("Take out bin", "Take out recycling bins"));
+        //toDoList.add(new Task("Weekend cleaning", "Clean out bathroom and kitchen"));
 
     }
 

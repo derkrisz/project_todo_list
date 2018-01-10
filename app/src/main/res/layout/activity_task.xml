@@ -16,7 +16,7 @@
         android:layout_marginTop="8dp"
         android:checked="false"
         android:duplicateParentState="false"
-        android:focusable="false"
+        android:focusable="auto"
         android:onClick="onCheckBoxClick"
         android:text="@string/task_complete_checkbox"
         android:textColorLink="@color/colorAccent"
