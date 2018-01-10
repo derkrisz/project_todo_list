@@ -8,8 +8,6 @@ import java.io.Serializable;
 
 public class Task implements Serializable {
 
-    //static int counter = 0;
-
     private String briefTask;
     private String detailedTask;
     private boolean taskCompleted;
@@ -46,10 +44,6 @@ public class Task implements Serializable {
     }
 
     public void setTaskNotCompleted() {this.taskCompleted = false;}
-
-    public void removeTask() {
-        
-    }
 
     public int getId() {
         return id;
