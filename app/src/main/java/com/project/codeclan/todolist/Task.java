@@ -47,6 +47,10 @@ public class Task implements Serializable {
 
     public void setTaskNotCompleted() {this.taskCompleted = false;}
 
+    public void removeTask() {
+        
+    }
+
     public int getId() {
         return id;
     }
