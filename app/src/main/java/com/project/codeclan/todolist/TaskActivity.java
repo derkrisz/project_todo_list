@@ -93,5 +93,15 @@ public class TaskActivity extends AppCompatActivity {
         }
         editor.putString("AllTasks", gson.toJson(allTasks));
         editor.apply();
+
+        final Intent takeBack = new Intent(this, ToDoListActivity.class);
+
+        final  Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(takeBack);
+            }
+        }, 1000);
     }
 }
