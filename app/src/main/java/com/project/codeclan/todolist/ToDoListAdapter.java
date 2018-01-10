@@ -1,5 +1,6 @@
 package com.project.codeclan.todolist;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,6 +34,7 @@ public class ToDoListAdapter extends ArrayAdapter<Task> {
         briefTask.setText(currentTask.getBriefTask().toString());
 
         listItemView.setTag(currentTask);
+        listItemView.setBackgroundResource(currentTask.isTaskCompleted() ? R.color.backgroundGreen : R.color.backgroundRed);
 
         return listItemView;
     }
