@@ -3,6 +3,7 @@ package com.project.codeclan.todolist;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -23,6 +25,7 @@ public class TaskActivity extends AppCompatActivity {
     Task addedTask;
     CheckBox checkBox;
     Button deleteButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,5 +81,8 @@ public class TaskActivity extends AppCompatActivity {
         }
         editor.putString("AllTasks", gson.toJson(allTasks));
         editor.apply();
+
+        Intent returnToMain  = new Intent(this, ToDoListActivity.class);
+        startActivity(returnToMain);
     }
 }
