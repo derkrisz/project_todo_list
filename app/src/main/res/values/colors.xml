@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3f51b5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#ff4081</color>
-    <color name="backgroundGreen">#2eb82e</color>
-    <color name="backgroundRed">#cc0000</color>
+    <color name="taskBackgroundGreen">#98e698</color>
+    <color name="taskBackgroundRed">#ff6666</color>
+    <color name="appBackground">#ffe5cc</color>
 </resources>
