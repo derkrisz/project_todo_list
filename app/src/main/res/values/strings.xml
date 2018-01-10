@@ -1,11 +1,9 @@
 <resources>
-    <string name="app_name">Do Dis Do Dat</string>
-    <string name="detailed_hint">Detailed description of task</string>
-    <string name="brief_hint">Brief description of task</string>
-    <string name="task_button">New task</string>
-    <string name="add_task_title">Create a task</string>
-    <string name="add_task_button">Create task</string>
+    <string name="app_name">Do Dis Do Dat!</string>
+    <string name="detailed_hint">Elaborate!</string>
+    <string name="brief_hint">Say it briefly!</string>
+    <string name="add_task_title">Create a new task!</string>
+    <string name="add_task_button">Create task!</string>
     <string name="preference_file_key">TASKS</string>
     <string name="task_complete_checkbox">DONE.</string>
-    <string name="delete_task_button">Delete</string>
 </resources>

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -18,14 +17,10 @@ import java.util.ArrayList;
 
 public class ToDoListActivity extends AppCompatActivity {
 
-    Button newButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todolist);
-
-        newButton = findViewById(R.id.new_button);
 
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         String allTasks = sharedPref.getString("AllTasks", new ArrayList<Task>().toString());
@@ -64,11 +59,6 @@ public class ToDoListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, TaskActivity.class);
         intent.putExtra("task", task);
-        startActivity(intent);
-    }
-
-    public void onNewButtonClick(View button) {
-        Intent intent = new Intent(this, AddTaskActivity.class);
         startActivity(intent);
     }
 }
