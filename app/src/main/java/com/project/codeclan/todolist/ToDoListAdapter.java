@@ -31,7 +31,7 @@ public class ToDoListAdapter extends ArrayAdapter<Task> {
         briefTask.setText(currentTask.getBriefTask().toString());
 
         listItemView.setTag(currentTask);
-        listItemView.setBackgroundResource(currentTask.isTaskCompleted() ? R.color.taskBackgroundGreen : R.color.taskBackgroundRed);
+        listItemView.setBackgroundResource(currentTask.isTaskCompleted() ? R.drawable.task_item_shape_completed : R.drawable.task_item_shape_not_completed);
 
         return listItemView;
     }
