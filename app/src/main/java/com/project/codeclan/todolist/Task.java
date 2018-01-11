@@ -12,12 +12,14 @@ public class Task implements Serializable {
     private String detailedTask;
     private boolean taskCompleted;
     private int id;
+    private CategoryType category;
 
-    public Task(String briefTask, String detailedTask, int counter) {
+    public Task(String briefTask, String detailedTask, int counter, CategoryType category) {
         this.briefTask = briefTask;
         this.detailedTask = detailedTask;
         this.taskCompleted = false;
         this.id = counter;
+        this.category = category;
 
     }
 
@@ -47,5 +49,9 @@ public class Task implements Serializable {
 
     public int getId() {
         return id;
+    }
+
+    public String getCategoryFromEnum() {
+       return this.category.getCategory();
     }
 }

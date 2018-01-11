@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class TaskActivity extends AppCompatActivity {
 
     TextView detailedTask;
+    TextView taskCategory;
     Task addedTask;
     CheckBox checkBox;
 
@@ -29,11 +30,13 @@ public class TaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task);
 
         detailedTask = findViewById(R.id.detailedtask);
+        taskCategory = findViewById(R.id.category);
         checkBox = findViewById(R.id.task_completion_checkbox);
 
         Intent intent = getIntent();
         addedTask = (Task)intent.getSerializableExtra("task");
         detailedTask.setText(addedTask.getDetailedTask().toString());
+        taskCategory.setText(addedTask.getCategoryFromEnum());
         checkBox.setChecked(addedTask.isTaskCompleted());
     }
 
