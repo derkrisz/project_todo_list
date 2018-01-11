@@ -54,4 +54,12 @@ public class Task implements Serializable {
     public String getCategoryFromEnum() {
        return this.category.getCategory();
     }
+
+    public void setBriefTask(String briefTask) {
+        this.briefTask = briefTask;
+    }
+
+    public void setDetailedTask(String detailedTask) {
+        this.detailedTask = detailedTask;
+    }
 }

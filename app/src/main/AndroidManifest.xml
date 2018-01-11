@@ -22,6 +22,8 @@
         <activity
             android:name=".AddTaskActivity"
             android:label="@string/add_task_title"
+            android:parentActivityName=".ToDoListActivity" />
+        <activity android:name=".EditTaskActivity"
             android:parentActivityName=".ToDoListActivity"></activity>
     </application>
 

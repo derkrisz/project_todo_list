@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class TaskActivity extends AppCompatActivity {
     TextView taskCategory;
     Task addedTask;
     CheckBox checkBox;
+    Button editTaskButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,11 @@ public class TaskActivity extends AppCompatActivity {
         detailedTask = findViewById(R.id.detailedtask);
         taskCategory = findViewById(R.id.category);
         checkBox = findViewById(R.id.task_completion_checkbox);
+        editTaskButton = findViewById(R.id.edit_task_button);
 
         Intent intent = getIntent();
         addedTask = (Task)intent.getSerializableExtra("task");
+
         detailedTask.setText(addedTask.getDetailedTask().toString());
         taskCategory.setText(addedTask.getCategoryFromEnum());
         checkBox.setChecked(addedTask.isTaskCompleted());
@@ -106,5 +110,11 @@ public class TaskActivity extends AppCompatActivity {
                 startActivity(takeBack);
             }
         }, 1000);
+    }
+
+    public void onEditButtonClick(View button) {
+        Intent intent = new Intent(this, EditTaskActivity.class);
+        intent.putExtra("editTask", addedTask);
+        startActivity(intent);
     }
 }

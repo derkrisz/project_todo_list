@@ -3,7 +3,9 @@
     <string name="detailed_hint">Elaborate!</string>
     <string name="brief_hint">Say it briefly!</string>
     <string name="add_task_title">Create a new task!</string>
-    <string name="add_task_button">Create task!</string>
+    <string name="add_task_button">CREATE!</string>
     <string name="preference_file_key">TASKS</string>
     <string name="task_complete_checkbox">DONE.</string>
+    <string name="edit_task_button">MODIFY!</string>
+    <string name="finalise_edit_task_button">DO IT!</string>
 </resources>
