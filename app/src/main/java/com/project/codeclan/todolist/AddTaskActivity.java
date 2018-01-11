@@ -3,6 +3,7 @@ package com.project.codeclan.todolist;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -43,6 +45,7 @@ public class AddTaskActivity extends AppCompatActivity{
                     public void onItemSelected(
                             AdapterView<?> adapterView, View view,
                             int i, long l) {
+                        ((TextView) categorySpinner.getChildAt(0)).setTextColor(Color.WHITE);
                        categoryString = categorySpinner.getItemAtPosition(i).toString();
                     }
 

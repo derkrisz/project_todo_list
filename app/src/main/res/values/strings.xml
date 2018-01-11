@@ -8,4 +8,5 @@
     <string name="task_complete_checkbox">DONE.</string>
     <string name="edit_task_button">MODIFY!</string>
     <string name="finalise_edit_task_button">DO IT!</string>
+    <string name="spinner_instructor">CHOOSE CATEGORY!</string>
 </resources>
