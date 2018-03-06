@@ -7,6 +7,8 @@ You are required to write an Android app which will allow the user to maintain a
 
 Users should also be able to mark tasks as completed.
 
+## Getting started
+
 ### Prerequisites
 
 Android Studio
